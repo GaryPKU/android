@@ -1,7 +1,6 @@
 package com.example.calculator;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -266,13 +265,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
 				break;
 			case R.id.btn_point:
-				if (originalText.isEmpty() && originalText.equals("0")) {
+				if (originalText.isEmpty()) {
 					break;
 				}
 				// get the last number from the expression and determine if it
 				// has already contains a decimal point
 				String[] parts = originalText.split("\\+-x/");
 				String lastNumber = parts[parts.length - 1];
+				// Log.d(TAG, lastNumber);
 				if (lastNumber.contains(".")) {
 					break;
 				}
